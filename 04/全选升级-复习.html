@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>全选升级-复习.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+window.onload=function(){
+	var aInput=document.getElementsByTagName('input');
+	var count=0;//选中的个数
+	
+	//点击全选与全不选
+	aInput[0].onclick=function(){
+		for(var i=1;i<aInput.length;i++){
+			if(this.checked==true){//全选
+				for(var i=1;i<aInput.length;i++){
+					aInput[i].checked=true;
+					count=aInput.length-1;
+				}
+			}else{
+				for(var i=1;i<aInput.length;i++){
+					aInput[i].checked=false;
+					count=0;
+				}
+			}
+		}
+		document.title=count;
+	}
+	
+	//根据选中的个数改变全选按钮
+	for(var i=1;i<aInput.length;i++){
+		aInput[i].onclick=function(){
+			if(this.checked==true){
+				count++;
+			}else{
+				count--;
+			}
+			if(count==aInput.length-1){
+				aInput[0].checked=true;
+			}else{
+				aInput[0].checked=false;
+			}
+			document.title=count;
+		}
+	}
+	
+}
+</script>
+  </head>
+  
+  <body>
+    <input type="checkbox">
+    <hr>
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+  </body>
+</html>
