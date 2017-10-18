@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>选项卡t1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+#box{
+	width:300px;
+	height:300px;
+	margin:100px auto;
+	border:2px #000 solid;
+}
+#box a{
+	display:block;
+	float:left;
+	width:100px;
+	height:40px;
+	line-height: 40px;
+	text-align:center;
+	background: green;
+	color:#fff;
+	text-decoration: none;
+}
+#box div{
+	width:300px;
+	height:260px;
+	line-height: 260px;
+	text-align:center;
+	font-size: 40px;
+	display: none;
+}
+#box a.active{
+background: blue;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	var aBtn=oBox.getElementsByTagName('a');
+	var aDiv=oBox.getElementsByTagName('div');
+	for(var i=0;i<aBtn.length;i++){
+		aBtn[i].index=i;
+		aBtn[i].onclick=function(){
+			for(var i=0;i<aBtn.length;i++){
+				aBtn[i].className='';
+				aDiv[i].style.display='none';
+			}
+			this.className='active';
+			aDiv[this.index].style.display='block';
+		}
+	}
+}
+</script>
+  </head>
+  
+  <body>
+    <div id="box">
+    	<a href="javascript:;" class="active">按钮1</a>
+    	<a href="javascript:;">按钮2</a>
+    	<a href="javascript:;">按钮3</a>
+    	<div style="display: block;">div1</div>
+    	<div>div2</div>
+    	<div>div3</div>
+    </div>
+  </body>
+</html>
