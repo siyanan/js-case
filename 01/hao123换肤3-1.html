@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hao123换肤3-1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<link rel="stylesheet" type="text/css" href="" id="link">
+	<script type="text/javascript">
+	window.onload=function(){
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+		var oBtn3=document.getElementById("btn3");
+		var oLink=document.getElementById("link");
+		oBtn1.onclick=function(){
+			oLink.href='skin1-1.css';
+		}
+		oBtn2.onclick=function(){
+			oLink.href='skin2-1.css';
+		}
+		oBtn3.onclick=function(){
+			oLink.href='skin3-1.css';
+		}
+	}
+	</script>
+  </head>
+  
+  <body>
+    <input type="button" value="皮肤1" id="btn1">
+    <input type="button" value="皮肤2" id="btn2">
+    <input type="button" value="皮肤3" id="btn3">
+    <div id="box"></div>
+  </body>
+</html>

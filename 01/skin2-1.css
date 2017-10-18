@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+body{
+	background:green;
+}
+#box{
+	width:100px;
+	height:100px;
+	background:yellow;
+	border:10px red solid;
+}

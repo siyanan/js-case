@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>点击一组div变色1-1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+div{
+width:100px;
+height:100px;
+background:#666;
+float:left;
+margin-right:10px;
+color:#fff;
+font-size:40px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var aDiv=document.getElementsByTagName('div');
+	//要对三个div里的第一个div进行操作,其他两个不生效
+	aDiv[0].onclick=function(){
+		alert("1");
+	}
+}
+</script>
+  </head>
+  
+  <body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </body>
+</html>
