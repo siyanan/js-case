@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>选项卡复习t1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+#box{
+width:300px;
+height:300px;
+margin:100px auto;
+border:2px #000 solid;
+font-family: "微软雅黑"
+}
+#box a{
+display:block;
+float:left;
+width:100px;
+height:40px;
+line-height: 40px;
+text-align: center;
+background:green;
+color:#fff;
+text-decoration: none;
+
+}
+#box div{
+width:300px;
+height:260px;
+line-height: 260px;
+text-align: center;
+font-size: 40px;
+display: none;
+}
+#box a.active{
+background: blue;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	var oA=oBox.getElementsByTagName('a');
+	var oDiv=oBox.getElementsByTagName('div');
+	for(var i=0;i<oA.length;i++){
+		
+		oA[i].onclick=function(){
+			//alert(this.title)
+			//清空所有按钮的className
+			for(var i=0;i<oA.length;i++){
+				oA[i].className='';
+			}
+			//当前按钮加被选中的状态
+			this.className='active';
+			for(var i=0;i<oDiv.length;i++){
+				oDiv[i].style.display='none';
+			}
+			//oDiv[2].style.display='block';
+			oDiv[this.title].style.display = 'block';
+
+		}
+	}
+}
+
+</script>
+  </head>
+  
+  <body>
+    <div id="box">
+    	<a href="javascript:;" title="0" class="active">按钮1</a>
+    	<a href="javascript:;" title="1">按钮2</a>
+    	<a href="javascript:;" title="2">按钮3</a>
+    	<div style="display: block;">div1</div>
+    	<div>div2</div>
+    	<div>div3</div>
+    </div>
+  </body>
+</html>

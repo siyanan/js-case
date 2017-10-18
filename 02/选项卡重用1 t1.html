@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>选项卡重用1 t1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+#box1,#box2{
+width:300px;
+height:300px;
+margin:100px auto;
+border:2px #000 solid;
+font-family: "微软雅黑"
+}
+#box1 a,#box2 a{
+display:block;
+float:left;
+width:100px;
+height:40px;
+line-height: 40px;
+text-align: center;
+background:green;
+color:#fff;
+text-decoration: none;
+
+}
+#box1 div,#box2 div{
+width:300px;
+height:260px;
+line-height: 260px;
+text-align: center;
+font-size: 40px;
+display: none;
+}
+#box1 a.active,#box2 a.active{
+background: blue;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	tab('box1','onclick');
+	tab('box2','onmouseover');
+}
+function tab(id,sEv){
+	var oBox=document.getElementById(id);
+	var oA=oBox.getElementsByTagName('a');
+	var oDiv=oBox.getElementsByTagName('div');
+	for(var i=0;i<oA.length;i++){
+		oA[i].index=i;
+		oA[i][sEv]=function(){
+			//清空所有按钮的className
+			for(var i=0;i<oA.length;i++){
+				oA[i].className='';
+				oDiv[i].style.display='none';
+			}
+			//当前按钮加被选中的状态
+			this.className='active';
+			oDiv[this.index].style.display='block';
+		}
+	}
+}
+</script>
+  </head>
+  
+  <body>
+    <div id="box1">
+    	<a href="javascript:;" class="active">按钮1</a>
+    	<a href="javascript:;">按钮2</a>
+    	<a href="javascript:;">按钮3</a>
+    	<div style="display: block;">div1</div>
+    	<div>div2</div>
+    	<div>div3</div>
+    </div>
+    <div id="box2">
+    	<a href="javascript:;" class="active">按钮1</a>
+    	<a href="javascript:;">按钮2</a>
+    	<a href="javascript:;">按钮3</a>
+    	<div style="display: block;">div1</div>
+    	<div>div2</div>
+    	<div>div3</div>
+    </div>
+  </body>
+</html>

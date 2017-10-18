@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>点击div变红-复习(While)t1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+div{
+width:100px;
+height:100px;
+background:green;
+float:left;
+margin:10px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var oDiv=document.getElementsByTagName('div');
+	var i=0;
+	while(i<oDiv.length){
+		oDiv[i].onclick=function(){
+			var i=0;
+			while(i<oDiv.length){
+				oDiv[i].style.background='green';
+				i++;
+			}
+			this.style.background='blue';
+		}
+		i++;
+	}
+}
+</script>
+  </head>
+  
+  <body>
+    <div></div><div></div><div></div>
+    <div></div><div></div><div></div>
+    <div></div><div></div><div></div>
+    <div></div><div></div><div></div>
+    <div></div><div></div><div></div>
+  </body>
+</html>

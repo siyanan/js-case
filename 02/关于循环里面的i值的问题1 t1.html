@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>关于循环里面的i值的问题1 t1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+div{
+width:100px;
+height:100px;
+background:red;
+float:left;
+margin:10px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var oDiv=document.getElementsByTagName('div');
+	var i=0;
+	while(i<oDiv.length){
+		oDiv[i].onclick=function(){
+			alert(i);
+		}
+		i++;
+	}
+}
+</script>
+  </head>
+  
+  <body>
+    <div></div><div></div><div></div>
+  </body>
+</html>
