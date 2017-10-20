@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oTxt=document.getElementById('text');
+				var oBtn=document.getElementById('btn');
+				
+				oBtn.onclick=function(){
+					eval(oTxt.value);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="text"/>
+		<input type="button" id="btn" value="按钮" />
+	</body>
+</html>

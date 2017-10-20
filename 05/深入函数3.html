@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function show(a){
+				//alert(1);
+				return function(b){
+					//alert(2);
+					return function(c){
+						return a+b+c;
+					}
+				}
+			}
+			alert(show(1)(2)(3));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

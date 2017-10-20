@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function show(){
+				alert(1);
+				return function(){
+					alert(2);
+				};
+			};
+			alert(show());
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
